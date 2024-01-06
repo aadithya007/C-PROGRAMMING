@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<stdlib.h>
+int game(char user,char computer)
+{
+    if(user==computer)
+        return 0;
+
+    else if (user=='s'&&computer=='w')
+        return 1;
+    
+    else if (user=='s'&&computer=='g')
+        return -1;
+
+    
+    else if (user=='g'&&computer=='s')
+        return 1;
+
+    
+    else if (user=='g'&&computer=='w')
+        return -1;
+    else if (user=='w'&&computer=='s')
+        return -1;
+    else if (user=='w'&&computer=='g')
+        return 1;
+       
+        
+    // else
+    // {
+    //     printf("invalid option.........");
+    //     printf("please try again!!");
+    // }
+
+}
+int main()
+{
+    for(int i=1;i<10;i++)
+    {
+         char user,computer;
+        int number=rand()%100;
+        printf("\nthe number is:%d\n",number);
+
+    if(number<33)
+        computer='s';
+    else if(number<66)
+        computer='w';
+    else if(number<100)
+        computer='g';
+    else
+        exit(0);
+
+    printf("         welcome!!!\n");
+    printf("------snake water gun--------\n");
+    printf("                   -powered by \n                    livewire_games\n");
+    printf("enter your choice:\n");
+    printf("#'s'for snake\n#'w'for water\n#'g' for gun\n#'e' for exit\n");
+    printf("enter your choice:");
+    scanf("%c",&user);
+   
+
+    int a=game(user,computer);
+    if(a==0)
+
+    {
+        printf("user choice:%c\ncomputer choice:%c\n",user,computer);
+        printf("     OMG!!!!\n-----DRAW-----");
+    }
+    else if(a==1)
+    {
+        printf("user choice:%c\ncomputer choice:%c\n",user,computer);
+        printf("           congratulations!!!!\n               -YOU WON-\n");
+        printf("       -----ONE MORE GAME???-----");
+    }
+    else if(a==-1)
+    {
+        printf("user choice:%c\ncomputer choice:%c\n",user,computer);
+        printf("                     ALAS!\n");
+        printf("               ----YOU LOSE----\n");
+        printf("      ------please try again!!!-----");
+    }
+    }    
+
+  
+}
